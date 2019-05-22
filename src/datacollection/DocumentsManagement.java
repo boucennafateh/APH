@@ -73,6 +73,7 @@ public class DocumentsManagement {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(docFile));
         BufferedWriter writer2 = new BufferedWriter(new FileWriter(versionFile));
+        Integer indice = 1;
 
         for (Document document : this.map.values()) {
             writer.write(document.getId().toString());
@@ -84,8 +85,7 @@ public class DocumentsManagement {
             for(Bloc bloc : document.getBlocSet())
                 for (Version version : bloc.getVersionSet()) {
                     System.out.println("writing ...");
-                    Integer id = version.getId() * version.getBloc().getId() * version.getBloc().getDocument().getId();
-                    writer2.write(id.toString());
+                    writer2.write((indice++).toString());
                     writer2.append("            ");
                     writer2.append(version.getAccessNbr().toString());
                     writer2.append("\n");
