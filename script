@@ -1,7 +1,7 @@
 set grid
 set xlabel 'Document id'
 set ylabel 'Access number'
-set yrange [0:100]
+set yrange [0:300]
 set xrange [0:1000]
 set key left top
 set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 6 ps 1.5   # --- blue
